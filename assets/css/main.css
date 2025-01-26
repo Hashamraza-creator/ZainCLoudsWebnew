@@ -18,8 +18,8 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #47b2e4; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #47b2e4;  /* The default color of the main navmenu links */
+  --nav-hover-color:#444444 ; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -132,7 +132,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #3d4d6a;
+/* background-color: red !important; */
   position: fixed;
   top:0;
   --heading-color: black !important;
@@ -141,7 +141,7 @@ h6 {
   padding-top:0;
   transition: all 0.5s;
   z-index: 1000;
-  background: transparent !important;
+  /* background: transparent !important; */
   box-shadow:rgba(0, 0, 0, 0.1);
 }
 
@@ -245,7 +245,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: white;
+    color: var(--nav-color);
     padding: 18px 15px;
     font-size: 15px;
     font-family: var(--nav-font);
@@ -883,7 +883,7 @@ background: transparent;
 
 .hero h1 {
   margin: 0;
-  font-size: 91px;
+  font-size: 70px;
   font-weight: 700;
   line-height: 114px;
   z-index: 5;
@@ -915,7 +915,10 @@ background: transparent;
   color: var(--contrast-color);
   border: solid 1px var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
+
+
 }
+
 
 .hero .btn-watch-video {
   font-size: 16px;
@@ -949,6 +952,7 @@ background: transparent;
   .hero h1 {
     font-size: 28px;
     line-height: 36px;
+    margin-left: 25px;
   }
 
   .hero p {
@@ -960,6 +964,8 @@ background: transparent;
   .hero .btn-get-started,
   .hero .btn-watch-video {
     font-size: 13px;
+    margin-top: 20px;
+    margin-left: 120px;
   }
 }
 

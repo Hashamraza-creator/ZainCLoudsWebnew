@@ -23,19 +23,20 @@
 
 
     // Function to change the background color of the header on scroll
+function changeHeaderBackground() {
+  const header = document.getElementById('header');
+  
+  if (window.scrollY > 100) {
+    // Change background color when the scroll position is greater than 100px
+    header.style.backgroundColor = '#47b2e4'; // Change this to your desired color
+  } else {
+    // Reset the background color when the scroll position is less than 100px
+    header.style.backgroundColor = 'transparent'; // Reset to default
+  }
+}
 
-    const navbar = document.getElementById('header');
-
-    // Add event listener to window scroll
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) { // If scrolled more than 50px
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
-
+// Add event listener for scroll
+window.addEventListener('scroll', changeHeaderBackground);
 
 
     /**
