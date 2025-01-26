@@ -133,12 +133,16 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   --background-color: #3d4d6a;
+  position: fixed;
+  top:0;
   --heading-color: black !important;
   color: var(--default-color);
   background-color: var(--background-color);
-  /* padding: 15px 0; */
+  padding-top:0;
   transition: all 0.5s;
-  z-index: 997;
+  z-index: 1000;
+  background: transparent !important;
+  box-shadow:rgba(0, 0, 0, 0.1);
 }
 
 .header .logo {
@@ -148,7 +152,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 50px; 
+  max-height: 105px; 
   max-width: auto; 
   height: auto; 
   margin-right: 12px; 
@@ -234,7 +238,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: black;
+    color: white;
     padding: 18px 15px;
     font-size: 15px;
     font-family: var(--nav-font);
@@ -837,6 +841,10 @@ section,
   margin-bottom: 0;
 }
 
+.st7-scroll-changed {
+  fill: #FF5733; /* Change the fill color or other properties you want */
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -845,7 +853,8 @@ section,
 
   min-height: 87vh;
   position: relative;
-  padding: 0;
+  padding: 0px;
+  padding-top: 0px;
   margin: 0px;
   display: flex;
   align-items: center;
@@ -853,49 +862,51 @@ background: transparent;
 
   
 }
-.back-video{
+.background-clip{
   width: auto;
     height: 100vh;
     object-fit: cover;
-    aspect-ratio: 16/9;
+    aspect-ratio: 29/9;
+    padding: 0px;
     position: absolute;
     left: 0;
-    top: 0;
+    top: -25px;
     z-index: -1;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 91px;
   font-weight: 700;
-  line-height: 56px;
+  line-height: 114px;
   z-index: 5;
 }
 
 .hero p {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin: 5px 0 30px 0;
-  font-size: 22px;
+  font-size: 30px;
   line-height: 1.3;
   font-weight: 600;
   z-index: 5;
 }
 
 .hero .btn-get-started {
-  color: var(--contrast-color);
-  background: var(--accent-color);
+  /* color: var(--contrast-color); */
+  /* background: var(--accent-color); */
   font-family: var(--heading-font);
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 1px;
   display: inline-block;
   padding: 10px 28px 12px 28px;
-  border-radius: 50px;
+  border: solid 1px;
   transition: 0.5s;
 }
 
 .hero .btn-get-started:hover {
   color: var(--contrast-color);
+  border: solid 1px var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 27.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" width="200px" height="200px"  id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
@@ -10,7 +10,7 @@
 	.st4{fill:#E5B764;}
 	.st5{fill:#45C2CC;}
 	.st6{fill:#A1B18D;}
-	.st7{fill:#030059;}
+	.st7{fill:#ffffff;}
 	.st8{fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:10;}
 	.st9{fill:url(#SVGID_00000128481472592999385730000011737079583487774624_);}
 </style>

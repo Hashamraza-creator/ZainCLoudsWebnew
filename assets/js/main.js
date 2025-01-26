@@ -1,11 +1,3 @@
-/**
-* Template Name: Arsha
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 (function() {
   "use strict";
 
@@ -17,7 +9,17 @@
     const selectHeader = document.querySelector('#header');
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
-  }
+
+    // Change the SVG color on scroll
+    
+    
+      
+    
+   
+  
+    
+    }
+    
 
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
