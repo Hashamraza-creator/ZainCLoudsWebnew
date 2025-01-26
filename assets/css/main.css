@@ -858,7 +858,7 @@ section,
 .hero {
   width: 100%;
 
-  min-height: 87vh;
+  min-height: 100vh;
   position: relative;
   padding: 0px;
   padding-top: 0px;
@@ -871,7 +871,7 @@ background: transparent;
 }
 .background-clip{
   width: auto;
-    height: 100vh;
+    height: 150vh;
     object-fit: cover;
     aspect-ratio: 29/9;
     padding: 0px;
