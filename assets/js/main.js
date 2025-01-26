@@ -21,6 +21,23 @@
     document.addEventListener('scroll', toggleScrolled);
     window.addEventListener('load', toggleScrolled);
 
+
+    // Function to change the background color of the header on scroll
+
+    const navbar = document.getElementById('header');
+
+    // Add event listener to window scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) { // If scrolled more than 50px
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+
+
+
     /**
      * Mobile nav toggle
      */
