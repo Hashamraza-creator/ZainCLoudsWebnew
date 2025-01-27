@@ -103,7 +103,7 @@ nav a:hover {
   border-radius: 50px;
   transition: 0.5s;
   color: var(--contrast-color);
-  border: solid 1px black;
+  border: solid 1px var(--default-color);
   background: var(--accent-color);
 }
 
@@ -483,10 +483,7 @@ a
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: black;
-    background: transparent; /* Remove any background */
-  border: none; /* Remove any borders */
-  box-shadow: none; /* Remove any shadows */
-  outline: none; /* Remove focus outlines */
+    background: transparent !important;
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -1515,10 +1512,15 @@ background: transparent;
   width: 150px;
   border-radius: 50%;
   flex-shrink: 0;
+  
 }
 
 .team .team-member .pic img {
   transition: ease-in-out 0.3s;
+  width: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--background-color);
+  margin: 0 auto;
 }
 
 .team .team-member:hover {
@@ -2146,3 +2148,5 @@ background: transparent;
   }
   
 }
+
+

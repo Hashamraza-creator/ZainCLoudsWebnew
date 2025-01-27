@@ -245,6 +245,22 @@ document.addEventListener('scroll', toggleHeaderClass);
       });
 
     });
+    document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper('.init-swiper', {
+        loop: true,  // Loop through the slides
+        speed: 600,  // Transition speed in ms
+        autoplay: {
+          delay: 5000,  // Delay between each slide in ms
+          disableOnInteraction: false,  // Keeps autoplay running even if the user interacts with the slider
+        },
+        slidesPerView: 'auto',  // Adjusts the number of slides visible at a time based on screen size
+        pagination: {
+          el: '.swiper-pagination',  // Pagination element
+          type: 'bullets',  // Pagination type (bullets)
+          clickable: true,  // Makes the pagination clickable
+        },
+      });
+    });
     
 
     /**
