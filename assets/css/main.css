@@ -242,16 +242,21 @@ nav a:hover {
   z-index: 1000;
   /* background: transparent !important; */
   box-shadow:rgba(0, 0, 0, 0.1);
+  height: 100px; /* Adjust this height as per your design */
+  display: flex;
+  align-items: center;
 }
 
 .header .logo {
   display: flex; 
   align-items: center; 
+  height: 100%; /* Ensure logo height is proportional to the navbar */
+  max-width: 100%;
   
 }
 
 .header .logo img {
-  max-height: 105px; 
+  /* max-height: 105px;  */
   max-width: auto; 
   height: auto; 
   margin-right: 12px; 
@@ -291,7 +296,8 @@ nav a:hover {
   .header .btn-getstarted {
     order: 2;
     margin: 0 15px 0 0;
-    padding: 6px 15px;
+    padding: 16px 10px;
+    font-size: 9px;
   }
 
   .header .navmenu {
