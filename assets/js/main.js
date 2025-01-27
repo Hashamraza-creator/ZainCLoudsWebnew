@@ -35,8 +35,40 @@ function changeHeaderBackground() {
   }
 }
 
-// Add event listener for scroll
-window.addEventListener('scroll', changeHeaderBackground);
+
+
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Check for saved theme preference or default to light
+const currentTheme = localStorage.getItem('theme') || 'light';
+body.classList.toggle('dark-mode', currentTheme === 'dark');
+updateButtonText();
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+    updateButtonText();
+});
+
+function updateButtonText() {
+    themeToggle.textContent = body.classList.contains('dark-mode') ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+}
+
+// Header scroll effect
+function toggleHeaderClass() {
+    const header = document.querySelector('#header');
+    if (window.scrollY > 100) {
+        header.classList.add('header-scrolled');
+    } else {
+        header.classList.remove('header-scrolled');
+    }
+}
+
+window.addEventListener('load', toggleHeaderClass);
+document.addEventListener('scroll', toggleHeaderClass);
 
 
     /**
@@ -213,6 +245,7 @@ window.addEventListener('scroll', changeHeaderBackground);
       });
 
     });
+    
 
     /**
      * Correct scrolling position upon page load for URLs containing hash links.

@@ -1,32 +1,84 @@
-
-
 :root {
-  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Jost",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Jost", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+
+  --background-color: #ffffff;
+  --default-color: #444444;
+  --heading-color: #37517e;
+  --accent-color: #47b2e4;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+
+  --nav-color: #47b2e4;
+  --nav-hover-color: #444444;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #444444;
+  --nav-dropdown-hover-color: #47b2e4;
+
+  scroll-behavior: smooth;
 }
 
+body.dark-mode {
+  --background-color: #121212;
+  --default-color: #fff;
+  --heading-color: #90caf9;
+  --accent-color: #64b5f6;
+  --surface-color: #000;
+  --contrast-color: #000;
 
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #37517e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #47b2e4; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --nav-color: #64b5f6;
+  --nav-hover-color: #000;
+  --nav-mobile-background-color: #1e1e1e;
+  --nav-dropdown-background-color: #1e1e1e;
+  --nav-dropdown-color: #e0e0e0;
+  --nav-dropdown-hover-color: #64b5f6;
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-  --nav-color: #47b2e4;  /* The default color of the main navmenu links */
-  --nav-hover-color:#444444 ; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #47b2e4; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+body {
+  background-color: var(--background-color);
+  color: var(--default-color);
+  font-family: var(--default-font);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--nav-hover-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+.surface {
+  background-color: var(--surface-color);
+  color: var(--default-color);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav {
+  background-color: var(--nav-mobile-background-color);
+  color: var(--nav-color);
+}
+
+nav a {
+  color: var(--nav-color);
+}
+
+nav a:hover {
+  color: var(--nav-hover-color);
+}
 
 .light-background {
   --background-color: #f5f6f8;
@@ -41,43 +93,89 @@
   --contrast-color: #ffffff;
 }
 
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
+.btn-getstarted {
+  font-family: var(--nav-font);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  color: var(--contrast-color);
+  border: solid 1px black;
+  background: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-# General Styling & Shared Classes
---------------------------------------------------------------*/
-body {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-family: var(--default-font);
+.btn-getstarted:hover {
+  background: var(--nav-hover-color);
 }
 
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: 0.3s;
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 15px 0;
 }
 
-a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
-  text-decoration: none;
+#header.header-scrolled {
+  background: var(--accent-color);
+  padding: 10px 0;
+}
+.contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
+.form-group {
+  margin-bottom: 20px;
 }
 
-/* PHP Email Form Messages
-------------------------------*/
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #444444;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Message status styles */
+.loading,
+.error-message,
+.sent-message {
+  display: none;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.loading {
+  background: #f8f9fa;
+}
+
+.error-message {
+  background: #ed3c0d;
+  color: #fff;
+}
+
+.sent-message {
+  background: #18d26e;
+  color: #fff;
+}
 .php-email-form .error-message {
   display: none;
   background: #df1529;
@@ -128,6 +226,7 @@ h6 {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
@@ -135,7 +234,7 @@ h6 {
 /* background-color: red !important; */
   position: fixed;
   top:0;
-  --heading-color: black !important;
+  --heading-color: blue ;
   color: var(--default-color);
   background-color: var(--background-color);
   padding-top:0;
@@ -200,7 +299,7 @@ h6 {
   }
 }
 #navbar.scrolled {
-  background-color: grey; /* Change to grey when scrolled */
+  background-color: #47b2e4; /* Change to grey when scrolled */
 }
 
 .content {
@@ -218,7 +317,7 @@ h6 {
 /* Index Page Header on Scroll
 ------------------------------*/
 .index-page.scrolled .header {
-  --background-color: rgba(40, 58, 90, 0.9);
+  --background-color: #47b2e4;
 }
 
 /*--------------------------------------------------------------
@@ -228,7 +327,7 @@ h6 {
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
-    background: transparent;
+    background: transparent ;
   }
 
   .navmenu ul {
@@ -323,7 +422,7 @@ h6 {
     left: -90%;
     visibility: hidden;
   }
-
+a
   .navmenu .dropdown .dropdown:hover>ul {
     opacity: 1;
     top: 0;
@@ -384,6 +483,10 @@ h6 {
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: black;
+    background: transparent; /* Remove any background */
+  border: none; /* Remove any borders */
+  box-shadow: none; /* Remove any shadows */
+  outline: none; /* Remove focus outlines */
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -1170,7 +1273,7 @@ background: transparent;
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
   padding: 50px 30px;
   transition: all ease-in-out 0.4s;
@@ -1797,12 +1900,14 @@ background: transparent;
   background: var(--accent-color);
   border: 0;
   padding: 10px 30px;
-  transition: 0.4s;
+  transition: 0.4s ease-in-out;
   border-radius: 50px;
 }
 
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  opacity: 0.8; /* Reduce opacity instead of hiding it completely */
+  cursor: pointer;
 }
 
 /*--------------------------------------------------------------
@@ -1871,7 +1976,7 @@ background: transparent;
 # Service Details Section
 --------------------------------------------------------------*/
 .service-details .services-list {
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   padding: 10px 30px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   margin-bottom: 20px;
@@ -1933,3 +2038,111 @@ background: transparent;
   color: var(--accent-color);
 }
 
+/* Switch container styling */
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hide the default checkbox */
+.theme-switch {
+  display: none;
+}
+
+/* The switch label */
+.switch-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* The circle inside the switch */
+.switch-circle {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Text next to the switch */
+.switch-text {
+  font-size: 16px;
+  color: #444;
+  margin-left: 10px;
+}
+
+/* When the checkbox is checked */
+.theme-switch:checked + .switch-label {
+  background-color: #4caf50;
+}
+
+.theme-switch:checked + .switch-label .switch-circle {
+  transform: translateX(30px);
+}
+
+
+  
+@media (max-width: 700px){
+
+  .switch-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .theme-switch {
+    display: none;
+  }
+  
+  .switch-label {
+    position: relative;
+    display: inline-flex;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .switch-circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .theme-switch:checked + .switch-label {
+    background-color: #4caf50;
+  }
+  
+  .theme-switch:checked + .switch-label .switch-circle {
+    transform: translateX(26px);
+  }
+  
+}

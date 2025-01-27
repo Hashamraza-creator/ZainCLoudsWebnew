@@ -32,7 +32,7 @@
 </head>
 
 
-<body class="index-page">
+<body class="index-page" style="background-color: black!important;">
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
       <a href="index.html" class="logo d-flex align-items-center me-auto">
@@ -68,11 +68,22 @@
           </li> -->
           <li><a href="#contact">Contact</a></li>
           <li><a href="#faq-2">FAQ</a></li>
+          <li class="switch-item">
+            <div class="switch-container">
+              <input type="checkbox" id="theme-toggle" class="theme-switch">
+              <label for="theme-toggle" class="switch-label">
+                <span class="switch-circle"></span>
+              </label>
+            </div>
+          </li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list" style="color: white;"></i>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" style="color: black;"></i>
       </nav>
 
       <a class="btn-getstarted" href="#about">Get Started</a>
+     
+      
+
 
     </div>
   </header>
@@ -85,7 +96,7 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-           <h1>Let's build Future Together</h1>
+           <h1>Let's design the Future Together</h1>
             <!-- <p>Redefining the future of technology by transforming bold ideas into groundbreaking digital solutions, crafted with precision, innovation, and a commitment to excellence that drives businesses toward limitless possibilities</p>  -->
             <div class="d-flex">
               <a href="#about" class="btn-get-started btn-lg">Explore Us</a>
@@ -198,7 +209,7 @@ takes our clients to the next level
     </section><!-- /About Section -->
 
     <!-- Why Us Section -->
-    <section id="why-us" class="section why-us light-background" data-builder="section">
+    <section id="why-us" class="section why-us " data-builder="section">
 
       <div class="container-fluid">
 
@@ -267,7 +278,7 @@ takes our clients to the next level
     </section><!-- /Skills Section -->
 
     <!-- Services Section -->
-    <section id="services" class="services section light-background">
+    <section id="services" class="services section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -281,7 +292,7 @@ takes our clients to the next level
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-activity icon"></i></div>
+              <div class="icon"><i class="bi bi-laptop"></i></div>
               <h4><a href="" class="stretched-link">Web Development</a></h4>
               <p>We offer seamless web services using frameworks like React, NextJS, Angular.</p>
             </div>
@@ -289,7 +300,7 @@ takes our clients to the next level
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
+              <div class="icon"><i class="bi bi-app-indicator"></i></div>
               <h4><a href="" class="stretched-link">App Development</a></h4>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
             </div>
@@ -297,7 +308,7 @@ takes our clients to the next level
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
+              <div class="icon"><i class="bi bi-cloud-download"></i></div>
               <h4><a href="" class="stretched-link">Cloud Services</a></h4>
               <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
             </div>
@@ -305,7 +316,7 @@ takes our clients to the next level
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-broadcast icon"></i></div>
+              <div class="icon"><i class="bi bi-search"></i></div>
               <h4><a href="" class="stretched-link">Seo Services</a></h4>
               <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
             </div>
@@ -316,7 +327,7 @@ takes our clients to the next level
 
             <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
               <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-broadcast icon"></i></div>
+                <div class="icon"><i class="bi bi-palette"></i></div>
                 <h4><a href="" class="stretched-link">Graphic Designing</a></h4>
                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
               </div>
@@ -324,7 +335,7 @@ takes our clients to the next level
 
               <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
                 <div class="service-item position-relative">
-                  <div class="icon"><i class="bi bi-broadcast icon"></i></div>
+                  <div class="icon"><i class="bi bi-database"></i></div>
                   <h4><a href="" class="stretched-link">Backend Development</a></h4>
                   <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                 </div>
@@ -354,6 +365,9 @@ takes our clients to the next level
             <a class="cta-btn align-middle" href="#contact">Call To Action</a>
           </div>
         </div>
+
+
+
 
       </div>
 
@@ -673,7 +687,7 @@ takes our clients to the next level
     </section><!-- /Testimonials Section -->
 
     <!-- Faq 2 Section -->
-    <section id="faq-2" class="faq-2 section light-background">
+    <section id="faq-2" class="faq-2 section ">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -790,7 +804,7 @@ takes our clients to the next level
                 <i class="bi bi-telephone flex-shrink-0"></i>
                 <div>
                   <h3>Call Us</h3>
-                  <p>0339-2003974</p>
+                  <p>+92-339-2003974</p>
                 </div>
               </div><!-- End Info Item -->
       
