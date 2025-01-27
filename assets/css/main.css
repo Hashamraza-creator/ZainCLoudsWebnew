@@ -242,7 +242,7 @@ nav a:hover {
   z-index: 1000;
   /* background: transparent !important; */
   box-shadow:rgba(0, 0, 0, 0.1);
-  height: 100px; /* Adjust this height as per your design */
+  height: 101px; /* Adjust this height as per your design */
   display: flex;
   align-items: center;
 }
