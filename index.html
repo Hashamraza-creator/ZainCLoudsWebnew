@@ -718,18 +718,34 @@ takes our clients to the next level
     
     
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const horizontalScroll = document.querySelector('.horizontal-scroll');
-        const scrollContainer = document.querySelector('.scroll-container');
-        
-        window.addEventListener('scroll', () => {
-            const scrollPercentage = (window.scrollY - scrollContainer.offsetTop) / (scrollContainer.offsetHeight - window.innerHeight);
-            const translateX = Math.min(Math.max(0, scrollPercentage * 500), 500); // Reduced from 200 to match new card width
-            horizontalScroll.style.transform = `translateX(-${translateX}vw)`;
-        });
-    });
-    </script>
-    
+      document.addEventListener('DOMContentLoaded', function () {
+          const horizontalScroll = document.querySelector('.horizontal-scroll');
+          const scrollContainer = document.querySelector('.scroll-container');
+  
+          function handleScroll() {
+              const scrollPercentage = 
+                  (window.scrollY - scrollContainer.offsetTop) / 
+                  (scrollContainer.offsetHeight - window.innerHeight);
+  
+              const isXsScreen = window.matchMedia('(max-width: 576px)').matches;
+  
+              // Adjust the horizontal scroll distance based on screen size
+              const maxTranslateX = isXsScreen ? 1800 : 500; // Smaller range for XS screens
+              const translateX = Math.min(Math.max(0, scrollPercentage * maxTranslateX), maxTranslateX);
+  
+              // Apply horizontal translation
+              horizontalScroll.style.transform = `translateX(-${translateX}vw)`;
+          }
+  
+          window.addEventListener('scroll', handleScroll);
+          window.addEventListener('resize', handleScroll); // Ensure behavior adapts on resize
+  
+          // Initial calculation
+          handleScroll();
+      });
+  </script>
+  
+      
     </section><!-- /Team Section -->
 
   

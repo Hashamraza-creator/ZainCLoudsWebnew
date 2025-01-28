@@ -2357,8 +2357,19 @@ background: transparent;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
+
   margin-left: 60px;
 }
+
+@media (max-width: 700px){
+  .leadership-card{
+  max-height: 74% ;
+
+  margin-bottom: 40px;
+  }
+  }
+  
+
 
 .leadership-img {
   width: 400px; /* Increased size */
