@@ -187,32 +187,45 @@ document.addEventListener('scroll', toggleHeaderClass);
 
     window.addEventListener("load", initSwiper);
 
+
+
+
+    const multipleItemCarousel = document.querySelector("#carouselExampleControls");
+
+    if (window.matchMedia("(min-width:576px)").matches) {
+      const carousel = new bootstrap.Carousel(multipleItemCarousel, {
+        interval: false
+      });
+    
+      var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+      var cardWidth = $(".carousel-item").width();
+    
+      var scrollPosition = 0;
+    
+      $(".carousel-control-next").on("click", function () {
+        if (scrollPosition < carouselWidth - cardWidth * 4) {
+          scrollPosition = scrollPosition + cardWidth;
+          $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 600);
+        }
+      });
+      $(".carousel-control-prev").on("click", function () {
+        if (scrollPosition > 0) {
+          scrollPosition = scrollPosition - cardWidth;
+          $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 600);
+        }
+      });
+    } else {
+      $(multipleItemCarousel).addClass("slide");
+    }
+
+
+
+    
     /**
      * Frequently Asked Questions Toggle
      */
-    document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
-      faqItem.addEventListener('click', () => {
-        faqItem.parentNode.classList.toggle('faq-active');
-      });
-    });
-
-    /**
-     * Animate the skills items on reveal
-     */
-    let skillsAnimation = document.querySelectorAll('.skills-animation');
-    skillsAnimation.forEach((item) => {
-      new Waypoint({
-        element: item,
-        offset: '80%',
-        handler: function(direction) {
-          let progress = item.querySelectorAll('.progress .progress-bar');
-          progress.forEach(el => {
-            el.style.width = el.getAttribute('aria-valuenow') + '%';
-          });
-        }
-      });
-    });
-
+    
+    
     /**
      * Init isotope layout and filters
      */
