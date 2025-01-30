@@ -111,6 +111,7 @@
           </video>
         </div>
       </div>
+   
 
     </section><!-- /Hero Section -->
     
@@ -817,33 +818,41 @@ takes our clients to the next level
   </section>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const slider = document.getElementById('slide-row-testimonial');
-      console.log(slider)
-      const indicators = document.querySelectorAll('.btn-testimonial');
-      let currentIndex = 0;
+    // script.js
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.slide-col-testimonial');
+  const btns = document.querySelectorAll('.btn-testimonial');
+  let currentIndex = 0;
+  const intervalTime = 3000; // Adjust the time interval as needed
+  let slideInterval;
 
-      function updateSlide() {
-          const slideWidth = slider.clientWidth; // Get the width of the slider
-          slider.style.transform = `translateX(${-currentIndex * slideWidth}px)`; // Move the slider based on the currentIndex
+  const activateSlide = (index) => {
+    document.getElementById('slide-row-testimonial').style.transform = `translateX(-${index * 100}%)`;
+    btns.forEach((btn, i) => {
+      btn.classList.toggle('active', i === index);
+    });
+  };
 
-          indicators.forEach((indicator, index) => {
-              indicator.classList.toggle('active', index === currentIndex); // Highlight the active indicator
-          });
-      }
+  const nextSlide = () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    activateSlide(currentIndex);
+  };
 
-      indicators.forEach((indicator, index) => {
-          indicator.addEventListener('click', () => {
-              currentIndex = index; // Update currentIndex based on the button clicked
-              updateSlide(); // Update the slide position
-          });
-      });
+  const startAutoSlide = () => {
+    slideInterval = setInterval(nextSlide, intervalTime);
+  };
 
-      window.addEventListener('resize', updateSlide); // Adjust on window resize
-
-      // Initial update
-      updateSlide();
+  btns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      currentIndex = index;
+      activateSlide(currentIndex);
+      clearInterval(slideInterval);
+      startAutoSlide();
+    });
   });
+
+  startAutoSlide();
+});
   </script>
   
     <!-- Faq 2 Section -->
