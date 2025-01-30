@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav {
-  background-color: var(--nav-mobile-background-color);
+/*  background-color: var(--nav-mobile-background-color);*/
   color: var(--nav-color);
 }
 
@@ -2081,7 +2081,7 @@ background: transparent;
   left: 3px;
   width: 24px;
   height: 24px;
-  background-color: white;
+  background-color: #fff;
   border-radius: 50%;
   transition: transform 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -2090,13 +2090,13 @@ background: transparent;
 /* Text next to the switch */
 .switch-text {
   font-size: 16px;
-  color: #444;
+  color: black;
   margin-left: 10px;
 }
 
 /* When the checkbox is checked */
 .theme-switch:checked + .switch-label {
-  background-color: #4caf50;
+  background-color: white;
 }
 
 .theme-switch:checked + .switch-label .switch-circle {
@@ -2166,8 +2166,9 @@ background: transparent;
   min-height: 50vh;
   width: 100%;
   background-color: var(--background-color);
-      
-  background-repeat: no-repeat;
+/* border: 1px solid red; */
+ background-repeat: no-repeat; 
+  margin-top: -0px;
 }
 
 .main-testimonial {
@@ -2205,6 +2206,7 @@ background: transparent;
   top: 0;
   right: 0;
   height: 100%;
+
 }
 
 .hero-testimonial img {
@@ -2326,82 +2328,121 @@ background: transparent;
 
 .scroll-container {
   position: relative;
-  height: 300vh;
+  height: 200vh;
+
 
 }
 
 .sticky-section {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 80vh;
   width: 300%;
   overflow: hidden;
   background: var(--background-color);
+  /* border: 1px red solid; */
+ 
 }
 
 .horizontal-scroll {
   position: absolute;
-  height: 100vh;
+  height: 50vh;
   background-color: var(--background-color);
   width: 1000vw; /* Reduced from 300vw to bring cards closer */
   display: flex;
   will-change: transform;
   transition: transform 0.1s ease-out;
+  /* border: 1px solid red; */
+  margin-top: -80px;
 }
+@media (max-width: 700px) {
+  .horizontal-scroll {
+    margin-top: 120px;
+  }
+  .leadership-card{
+    height: 20vh;
+  }
+  
+  }
+  .leadership-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    margin-bottom: 2rem;
+    border-radius: 50%;
+
+    @media (min-width: 786px) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+
 
 .leadership-card {
-  flex: 0 0 30vw; /* Reduced from 100vw to bring cards closer */
-  height: 100vh;
+  flex: 0 0 20vw; /* Reduced from 100vw to bring cards closer */
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
+  border-radius: 200px;
+  /* border: 2solid red; */
+  
 
   margin-left: 60px;
 }
 
+
 @media (max-width: 700px){
   .leadership-card{
-  max-height: 74% ;
+  max-height: 18% ;
 
   margin-bottom: 40px;
   }
+  .horizontal-scroll{
+    height: 10vh;
   }
-  
+  }
 
-
-.leadership-img {
-  width: 400px; /* Increased size */
-  height: 400px;
-  object-fit: cover;
-  filter: grayscale(100%);
-  margin-bottom: 2rem;
-}
 
 .name-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
   margin-bottom: 0.5rem;
 }
 
 .first-name {
-  font-size: 2.5rem;
+  font-size: 18px;
   font-weight: bold;
   color: var(--default-color) ;
+
+  @media (min-width: 786px) {
+    font-size: 2rem;
+  }
 }
 
 .last-name {
-  font-size: 2.5rem;
+  font-size: 18px;
   font-weight: bold;
   color: var(--accent-color);
+
+  @media (min-width: 786px) {
+    font-size: 2rem;
+  }
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: 16px;
   color: var(--default-color);
   margin-bottom: 1rem;
+
+  @media (min-width: 786px) {
+    font-size: 1.2rem;
+  }
 }
 
 .main-title {
@@ -2420,6 +2461,7 @@ background: transparent;
 .linkedin-icon {
   color: var(--default-color);
   transition: color 0.3s ease;
+ 
 }
 
 .linkedin-icon:hover {
