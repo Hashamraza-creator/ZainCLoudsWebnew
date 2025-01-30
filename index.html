@@ -725,7 +725,7 @@ takes our clients to the next level
             const isXsScreen = window.matchMedia('(max-width: 576px)').matches;
     
             // Adjust the horizontal scroll distance based on screen size
-            const maxTranslateX = isXsScreen ? 2000 : 280; // Smaller range for XS screens
+            const maxTranslateX = isXsScreen ? 2000 : 400; // Smaller range for XS screens
             const translateX = Math.min(Math.max(0, scrollPercentage * maxTranslateX), maxTranslateX);
             console.log(maxTranslateX)
     
