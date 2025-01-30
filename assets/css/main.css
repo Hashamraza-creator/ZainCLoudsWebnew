@@ -2096,7 +2096,7 @@ background: transparent;
 
 /* When the checkbox is checked */
 .theme-switch:checked + .switch-label {
-  background-color: white;
+  background-color: black;
 }
 
 .theme-switch:checked + .switch-label .switch-circle {
