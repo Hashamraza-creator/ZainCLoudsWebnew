@@ -318,4 +318,55 @@ document.addEventListener('scroll', toggleHeaderClass);
     document.addEventListener('scroll', navmenuScrollspy);
 
   });
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section[id]")
+    const navLinks = document.querySelectorAll("#navmenu ul li a")
+  
+    function highlightNavOnScroll() {
+      const scrollPosition = window.scrollY
+  
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 150 // Adjust this value based on your header height
+        const sectionHeight = section.offsetHeight
+        const sectionId = section.getAttribute("id")
+  
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          navLinks.forEach((link) => {
+            link.classList.remove("active")
+            if (link.getAttribute("href") === `#${sectionId}`) {
+              link.classList.add("active")
+            }
+          })
+        }
+      })
+    }
+  
+    window.addEventListener("scroll", highlightNavOnScroll)
+    highlightNavOnScroll() // Call once to set initial state
+  })
+  
+  // Ensure Isotope is initialized when the DOM is ready
+document.addEventListener('DOMContentLoaded', function () {
+  var iso = new Isotope('.isotope-container', {
+    itemSelector: '.portfolio-item',
+    layoutMode: 'masonry',
+    filter: '*' // Default filter is all
+  });
+
+  // Filter items when a filter button is clicked
+  const filters = document.querySelectorAll('.portfolio-filters li');
+  filters.forEach(filter => {
+    filter.addEventListener('click', function () {
+      // Remove 'filter-active' class from all filters
+      filters.forEach(f => f.classList.remove('filter-active'));
+      // Add 'filter-active' class to the clicked filter
+      filter.classList.add('filter-active');
+      
+      // Get the filter value and apply it to Isotope
+      var filterValue = filter.getAttribute('data-filter');
+      iso.arrange({ filter: filterValue });
+    });
+  });
+});
+
 })();
