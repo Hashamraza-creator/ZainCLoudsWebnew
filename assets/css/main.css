@@ -123,7 +123,7 @@ nav a:hover {
   backdrop-filter: blur(10px); /* Blur effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
   padding: 10px 0;
-  border-radius: 10px; /* Rounded corners for a soft look */
+
   
   box-shadow: 0 4px 6px rgba(71, 178, 228, 0.2); /* Optional: Adds a soft shadow */
 }
@@ -250,7 +250,7 @@ nav a:hover {
   z-index: 1000;
   /* background: transparent !important; */
   box-shadow:rgba(0, 0, 0, 0.1);
-  height: 50px; /* Adjust this height as per your design */
+  height: 70px; /* Adjust this height as per your design */
   display: flex;
   align-items: center;
 }
@@ -2378,6 +2378,13 @@ background: transparent;
     filter: grayscale(100%);
     margin-bottom: 2rem;
     border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover{
+      filter: none;
+      transform: scale(1.2);
+    }
 
     @media (min-width: 786px) {
       width: 200px;
