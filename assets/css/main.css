@@ -2231,7 +2231,7 @@ background: transparent;
   top: 50%;
   transform: translateY(-50%);
   width: calc(100% - 320px);
-  height: 270px;
+  height: 390px;
   color: #4d4352;
   background: rgba(255, 255, 255, 0.7);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
