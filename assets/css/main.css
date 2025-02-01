@@ -9,6 +9,7 @@
   --accent-color: #47b2e4;
   --surface-color: #ffffff;
   --contrast-color: #ffffff;
+  --service-color: #fff;
 
   --nav-color: #47b2e4;
   --nav-hover-color: #47b2e4;
@@ -22,6 +23,7 @@
 
 body.dark-mode {
   --background-color: #121212;
+  --service-color: #494948;
   --default-color: #fff;
   --heading-color: #90caf9;
   --accent-color: #64b5f6;
@@ -1286,8 +1288,8 @@ background: transparent;
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {
-  background-color: var(--background-color);
-  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+  background-color: var(--service-color);
+  box-shadow: 0px 5px 9px 0px var(--accent-color);
   padding: 50px 30px;
   transition: all ease-in-out 0.4s;
   height: 100%;
@@ -1322,7 +1324,7 @@ background: transparent;
 
 .services .service-item:hover {
   transform: translateY(-10px);
-}
+  }
 
 .services .service-item:hover h4 a {
   color: var(--accent-color);
@@ -2018,6 +2020,7 @@ background: transparent;
 
 .service-details .services-list a:hover {
   border-color: var(--accent-color);
+  
 }
 
 .service-details .services-img {
