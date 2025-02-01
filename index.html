@@ -725,7 +725,7 @@ takes our clients to the next level
             const isXsScreen = window.matchMedia('(max-width: 576px)').matches;
     
             // Adjust the horizontal scroll distance based on screen size
-            const maxTranslateX = isXsScreen ? 2000 : 400; // Smaller range for XS screens
+            const maxTranslateX = isXsScreen ? 2000 : 350; // Smaller range for XS screens
             const translateX = Math.min(Math.max(0, scrollPercentage * maxTranslateX), maxTranslateX);
             console.log(maxTranslateX)
     
@@ -815,121 +815,111 @@ takes our clients to the next level
               </div>
           </div>
       </div>
-  </section>
-
-  <script>
-    // script.js
-document.addEventListener('DOMContentLoaded', function() {
-  const slides = document.querySelectorAll('.slide-col-testimonial');
-  const btns = document.querySelectorAll('.btn-testimonial');
-  let currentIndex = 0;
-  const intervalTime = 3000; // Adjust the time interval as needed
-  let slideInterval;
-
-  const activateSlide = (index) => {
-    document.getElementById('slide-row-testimonial').style.transform = `translateX(-${index * 100}%)`;
-    btns.forEach((btn, i) => {
-      btn.classList.toggle('active', i === index);
-    });
-  };
-
-  const nextSlide = () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    activateSlide(currentIndex);
-  };
-
-  const startAutoSlide = () => {
-    slideInterval = setInterval(nextSlide, intervalTime);
-  };
-
-  btns.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-      currentIndex = index;
-      activateSlide(currentIndex);
-      clearInterval(slideInterval);
+      <script>
+        // script.js
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.slide-col-testimonial');
+      const btns = document.querySelectorAll('.btn-testimonial');
+      let currentIndex = 0;
+      const intervalTime = 3000; // Adjust the time interval as needed
+      let slideInterval;
+    
+      const activateSlide = (index) => {
+        document.getElementById('slide-row-testimonial').style.transform = `translateX(-${index * 100}%)`;
+        btns.forEach((btn, i) => {
+          btn.classList.toggle('active', i === index);
+        });
+      };
+    
+      const nextSlide = () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        activateSlide(currentIndex);
+      };
+    
+      const startAutoSlide = () => {
+        slideInterval = setInterval(nextSlide, intervalTime);
+      };
+    
+      btns.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+          currentIndex = index;
+          activateSlide(currentIndex);
+          clearInterval(slideInterval);
+          startAutoSlide();
+        });
+      });
+    
       startAutoSlide();
     });
-  });
+      </script>
+  </section>
 
-  startAutoSlide();
-});
-  </script>
   
-    <!-- Faq 2 Section -->
-    <section id="faq-2" class="faq-2 section ">
+  
+ <!-- FAQ Section -->
+ <section id="faq-2" class="faq-2 section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Frequently Asked Questions</h2>
+    <p>Have questions? We’ve got answers! Explore our Frequently Asked Questions to find quick and clear solutions to common queries.</p>
+  </div>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Frequently Asked Questions</h2>
-        <p>Have questions? We’ve got answers! Explore our Frequently Asked Questions to find quick and clear solutions to common queries. Whether you need help navigating our services, understanding our policies, or troubleshooting an issue, our FAQ section is here to make your experience seamless</p>
-      </div><!-- End Section Title -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="faq-container">
 
-      <div class="container">
-
-        <div class="row justify-content-center">
-
-          <div class="col-lg-10">
-
-            <div class="faq-container">
-
-              <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
-                <i class="faq-icon bi bi-question-circle"></i>
-                <h3>What services does your software house offer?</h3>
-                <div class="faq-content">
-                  <p>We specialize in custom software development, web and mobile app development, UI/UX design, cloud solutions, and maintenance services.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-                <i class="faq-icon bi bi-question-circle"></i>
-                <h3>Do you work with startups, small businesses, and enterprises?</h3>
-                <div class="faq-content">
-                  <p>Yes, we cater to businesses of all sizes. Whether you’re a startup or a large enterprise, we provide tailored solutions to meet your needs.
-
-                  </p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
-                <i class="faq-icon bi bi-question-circle"></i>
-                <h3>How can I get a quote for my project?</h3>
-                <div class="faq-content">
-                  <p>You can reach out to us via our contact form or email with your project requirements. Our team will review the details and provide a tailored quote promptly.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
-                <i class="faq-icon bi bi-question-circle"></i>
-                <h3>How do you ensure the quality of your software?</h3>
-                <div class="faq-content">
-                  <p>We follow best practices in software development, including rigorous testing, code reviews, and adherence to industry standards, ensuring top-quality deliverables.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-              
-              <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
-                <i class="faq-icon bi bi-question-circle"></i>
-                <h3>What technologies and tools do you specialize in?</h3>
-                <div class="faq-content">
-                  <p>Our team is skilled in a wide range of technologies, including React, Angular, Swift, Java, Python, Laravel, AWS, Microsoft Azure, and more.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-              
-
+          <!-- FAQ Items -->
+          <div class="faq-item faq-new" id="abc" data-aos="fade-up" data-aos-delay="200">
+            <i class="faq-icon bi bi-question-circle"></i>
+            <h3 class="faq-question">What services does your software house offer?</h3>
+            <div class="faq-content">
+              <p>We specialize in custom software development, web and mobile app development, UI/UX design, cloud solutions, and maintenance services.</p>
             </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
 
+          <div class="faq-item faq-new" data-aos="fade-up" data-aos-delay="300">
+            <i class="faq-icon bi bi-question-circle"></i>
+            <h3 class="faq-question">Do you work with startups, small businesses, and enterprises?</h3>
+            <div class="faq-content">
+              <p>Yes, we cater to businesses of all sizes. Whether you’re a startup or a large enterprise, we provide tailored solutions to meet your needs.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item faq-new" data-aos="fade-up" data-aos-delay="400">
+            <i class="faq-icon bi bi-question-circle"></i>
+            <h3 class="faq-question">How can I get a quote for my project?</h3>
+            <div class="faq-content">
+              <p>You can reach out to us via our contact form or email with your project requirements. Our team will review the details and provide a tailored quote promptly.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item faq-new" data-aos="fade-up" data-aos-delay="500">
+            <i class="faq-icon bi bi-question-circle"></i>
+            <h3 class="faq-question">How do you ensure the quality of your software?</h3>
+            <div class="faq-content">
+              <p>We follow best practices in software development, including rigorous testing, code reviews, and adherence to industry standards.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item faq-new" data-aos="fade-up" data-aos-delay="600">
+            <i class="faq-icon bi bi-question-circle"></i>
+            <h3 class="faq-question">What technologies and tools do you specialize in?</h3>
+            <div class="faq-content">
+              <p>Our team is skilled in a wide range of technologies, including React, Angular, Swift, Java, Python, Laravel, AWS, Microsoft Azure, and more.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
           </div>
 
         </div>
-
       </div>
-
-    </section><!-- /Faq 2 Section -->
-
+    </div>
+  </div>
+  
+</section>
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 

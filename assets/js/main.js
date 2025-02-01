@@ -370,4 +370,63 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// FAQ
+document.addEventListener("DOMContentLoaded", function () {
+  const faqItems = document.querySelectorAll(".faq-new");
+  console.log(faqItems)
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    console.log(question)
+
+    // Add event listener to each question
+    question.addEventListener("click", function () {
+      const isActive = item.classList.contains("faq-active");
+
+      // Close all FAQ items
+      faqItems.forEach((faq) => {
+        faq.classList.remove("faq-active");
+        faq.querySelector(".faq-content").style.display = "none";
+      });
+
+      // Toggle the clicked item
+      if (!isActive) {
+        item.classList.add("faq-active");
+        item.querySelector(".faq-content").style.display = "block"; // Show content
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const faqContainer = document.querySelector(".faq-container");
+
+  faqContainer.addEventListener("click", function (event) {
+    console.log('hello')
+    // Check if the clicked element is either a question or toggle icon
+    const faqItem = event.target.closest(".faq-item");
+    
+    if (faqItem) {
+      const content = faqItem.querySelector(".faq-content");
+      const isActive = faqItem.classList.contains("faq-active");
+
+      // Close all FAQ items
+      const allFaqItems = document.querySelectorAll(".faq-item");
+      allFaqItems.forEach((item) => {
+        item.classList.remove("faq-active");
+        item.querySelector(".faq-content").style.display = "none";
+      });
+
+      // Toggle the clicked item
+      if (!isActive) {
+        faqItem.classList.add("faq-active");
+        content.style.display = "block"; // Show content
+      }
+    }
+  });
+});
+
+
+
+
 })();
