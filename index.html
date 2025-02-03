@@ -1030,46 +1030,90 @@ takes our clients to the next level
       
           <!-- Right Column: Contact Form -->
           <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-      
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+            <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="row gy-4">
+        
+                    <div class="col-md-6">
+                        <label for="name-field" class="pb-2">Your Name</label>
+                        <input type="text" name="user_name" id="name-field" class="form-control" required>
+                    </div>
+        
+                    <div class="col-md-6">
+                        <label for="email-field" class="pb-2">Your Email</label>
+                        <input type="email" class="form-control" name="user_email" id="email-field" required>
+                    </div>
+        
+                    <div class="col-md-12">
+                        <label for="subject-field" class="pb-2">Subject</label>
+                        <input type="text" class="form-control" name="subject" id="subject-field" required>
+                    </div>
+        
+                    <div class="col-md-12">
+                        <label for="message-field" class="pb-2">Message</label>
+                        <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+                    </div>
+        
+                    <div class="col-md-12 text-center">
+                        <div class="loading" style="display: none;">Loading...</div>
+                        <!-- <div class="error-message" style="display: none; color: red;"></div> -->
+                        <div class="sent-message" style="display: none; color: green;">Your message has been sent. Thank you!</div>
+        
+                        <button type="submit">Send Message</button>
+                    </div>
+        
                 </div>
-      
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
-      
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
-      
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
-      
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-      
-                  <button type="submit">Send Message</button>
-
-                  
-                </div>
-      
-              </div>
             </form>
-          </div><!-- End Right Column -->
-      
-        </div><!-- End Row -->
-      
-      </div><!-- End Container -->
+        </div>
+        
+        <!-- Include EmailJS -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> 
+        
+        <script>
+           // Initialize EmailJS
+           (function () {
+               emailjs.init("kFnRkXK6Ly03i8T2O"); // Replace with your EmailJS Public Key
+           })();
+        
+           document.getElementById("contact-form").addEventListener("submit", function(event) {
+               event.preventDefault(); // Prevent default form submission
+        
+               // Show loading message
+               document.querySelector(".loading").style.display = "block";
+               document.querySelector(".sent-message").style.display = "none";
+               document.querySelector(".error-message").style.display = "none";
+        
+               // Collect form data
+               const params = {
+                   name: document.getElementById("name-field").value,
+                   email: document.getElementById("email-field").value,
+                   subject: document.getElementById("subject-field").value,
+                   message: document.getElementById("message-field").value
+               };
+        
+               // Send email using EmailJS
+               emailjs.send("service_wh9tksl", "template_1z3evrm", params)
+                   .then(function(response) {
+                       console.log("Email sent successfully!", response);
+        
+                       // Hide loading and show success message
+                       document.querySelector(".loading").style.display = "none";
+                       document.querySelector(".sent-message").style.display = "block";
+        
+                       // Reset the form
+                       document.getElementById("contact-form").reset();
+                   })
+                   .catch(function(error) {
+                       console.error("Error:", error);
+        
+                       // Hide loading and show error message
+                       document.querySelector(".loading").style.display = "none";
+                       document.querySelector(".error-message").style.display = "block";
+                       document.querySelector(".error-message").innerText = "Failed to send message. Please try again!";
+                   });
+           });
+        </script>
+        
+        
       
 
         </div>
@@ -1137,12 +1181,13 @@ takes our clients to the next level
           <h4>Follow Us</h4>
           <p>Connect with us on different Social Media platforms</p>
           <div class="social-links d-flex">
-            <a href="career@zainclouds.com"><i class="bi bi-briefcase"></i></a>
-            <a href="https://www.facebook.com/ZainClouds3/"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/zainclouds1/"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/zainclouds/"><i class="bi bi-linkedin"></i></a>
+            <a href="career@zainclouds.com" target="_blank"><i class="bi bi-briefcase"></i></a>
+            <a href="https://www.facebook.com/ZainClouds3/ " target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/zainclouds1/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/zainclouds/" target="_blank"><i class="bi bi-linkedin"></i></a>
 
-            <a href="https://www.tiktok.com/@zainclouds"><i class="bi bi-tiktok"></i></a>          </div>
+            <a href="https://www.tiktok.com/@zainclouds" target="_blank"><i class="bi bi-tiktok"></i></a>   
+                 </div>
         </div>
 
       </div>
@@ -1167,6 +1212,8 @@ takes our clients to the next level
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
+  
+
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
