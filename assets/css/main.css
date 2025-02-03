@@ -121,7 +121,8 @@ nav a:hover {
 }
 
 #header.header-scrolled {
-  background: rgba(71, 178, 228, 0.2); /* Light transparent blue background */
+  background: rgba(255, 255, 255, 0.2);
+ /* Light transparent blue background */
   backdrop-filter: blur(10px); /* Blur effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
   padding: 10px 0;
@@ -2375,8 +2376,8 @@ background: transparent;
   
   }
   .leadership-img {
-    width: 300px;
-    height: 300px;
+    width: 700px;
+    height: 700px;
     object-fit: cover;
     filter: grayscale(100%);
     margin-bottom: 2rem;
