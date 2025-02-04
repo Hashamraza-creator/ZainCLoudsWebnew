@@ -121,7 +121,7 @@ nav a:hover {
 }
 
 #header.header-scrolled {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(30, 30, 30, 0.2);
  /* Light transparent blue background */
   backdrop-filter: blur(10px); /* Blur effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
@@ -335,6 +335,10 @@ nav a:hover {
 ------------------------------*/
 .index-page.scrolled .header {
   --background-color: #47b2e4;
+  background: transparent;
+}
+.index-page.scrolled .header li {
+color: black;
 }
 
 /*--------------------------------------------------------------
