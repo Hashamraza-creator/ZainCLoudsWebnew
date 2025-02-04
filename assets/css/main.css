@@ -22,7 +22,7 @@
 }
 
 body.dark-mode {
-  --background-color: #121212;
+  --background-color: #1E1E1E;
   --service-color: #494948;
   --default-color: #fff;
   --heading-color: #90caf9;
@@ -1936,6 +1936,9 @@ background: transparent;
 --------------------------------------------------------------*/
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
+}
+.page-title{
+  margin-top: 100px;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
