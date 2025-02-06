@@ -23,12 +23,13 @@
 
 body.dark-mode {
   --background-color: #1E1E1E;
-  --service-color: #494948;
+  --service-color: #1e1e1e;
   --default-color: #fff;
   --heading-color: #90caf9;
   --accent-color: #64b5f6;
   --surface-color: #000;
   --contrast-color: #000;
+  
 
   --nav-color: #64b5f6;
   --nav-hover-color: #000;
@@ -1124,7 +1125,13 @@ background: transparent;
 --------------------------------------------------------------*/
 .clients {
   padding: 12px 0;
+  background-color: var(--service-color);
+  border: 1px solid color-mix(in srgb, var(--default-color) 10%, transparent);
+  box-shadow: 0px 4px 5px 0px var(--accent-color);
+  position: relative; /* Ensures z-index works */
+  z-index: 9999;
 }
+
 
 .clients .swiper {
   padding: 10px 0;
