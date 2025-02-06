@@ -44,6 +44,12 @@ body {
   color: var(--default-color);
   font-family: var(--default-font);
   transition: background-color 0.3s, color 0.3s;
+
+
+  
+  
+
+
 }
 
 a {
@@ -73,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 nav {
 /*  background-color: var(--nav-mobile-background-color);*/
   color: var(--nav-color);
+  z-index: 1000;
 }
 
 nav a {
@@ -126,6 +133,7 @@ nav a:hover {
   backdrop-filter: blur(10px); /* Blur effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
   padding: 10px 0;
+  z-index: 9999;
 
   
   box-shadow: 0 4px 6px rgba(71, 178, 228, 0.2); /* Optional: Adds a soft shadow */
@@ -313,10 +321,12 @@ nav a:hover {
 
   .header .navmenu {
     order: 3;
+    
   }
 }
 #navbar.scrolled {
   background-color: #47b2e4; /* Change to grey when scrolled */
+  z-index: 10001;
 }
 
 .content {
@@ -329,6 +339,7 @@ nav a:hover {
   --background-color: rgba(255, 255, 255, 0);
   --heading-color: #ffffff;
   --nav-color: #ffffff;
+  z-index: 99999;
 }
 
 /* Index Page Header on Scroll
@@ -336,6 +347,7 @@ nav a:hover {
 .index-page.scrolled .header {
   --background-color: #47b2e4;
   background: transparent;
+  z-index: 99999;
 }
 .index-page.scrolled .header li {
 color: black;
@@ -508,13 +520,15 @@ a
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
+    z-index: 1000;
     cursor: pointer;
     transition: color 0.3s;
+
   }
 
   .navmenu {
     padding: 0;
-    z-index: 9997;
+    z-index: 10001;
   }
 
   .navmenu ul {
@@ -605,6 +619,9 @@ a
     overflow: hidden;
   }
 
+  .index-page scrolled mobile-nav-active{
+z-index: 1000001;
+  }
   .mobile-nav-active .mobile-nav-toggle {
     color: #fff;
     position: absolute;
@@ -612,7 +629,7 @@ a
     top: 15px;
     right: 15px;
     margin-right: 0;
-    z-index: 9999;
+    z-index: 9999 !important;
   }
 
   .mobile-nav-active .navmenu {
@@ -1393,7 +1410,7 @@ background: transparent;
   padding: 12px 40px;
   border-radius: 50px;
   transition: 0.5s;
-  margin-top: 69%;
+  margin-top: 63%;
   border: 2px solid var(--contrast-color);
   color: var(--contrast-color);
 
@@ -2377,7 +2394,7 @@ margin-top: -10px;
 
 .horizontal-scroll {
   position: absolute;
-  height: 50vh;
+  height: 5vh;
   background-color: var(--background-color);
   width: 1000vw; /* Reduced from 300vw to bring cards closer */
   display: flex;
@@ -2388,7 +2405,7 @@ margin-top: -10px;
 }
 @media (max-width: 700px) {
   .horizontal-scroll {
-    margin-top: 120px;
+    margin-top: 50px;
   }
   .leadership-card{
     height: 20vh;
@@ -2396,8 +2413,8 @@ margin-top: -10px;
   
   }
   .leadership-img {
-    width: 700px;
-    height: 700px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     filter: grayscale(100%);
     margin-bottom: 2rem;
@@ -2410,10 +2427,10 @@ margin-top: -10px;
       transform: scale(1.2);
     }
 
-    @media (min-width: 786px) {
-      width: 200px;
-      height: 200px;
-    }
+    /* @media (max-width: 700px) {
+     width: 150px;
+     height: 150px;
+    } */
   }
 
 
@@ -2434,9 +2451,9 @@ margin-top: -10px;
 }
 
 
-@media (max-width: 700px){
+@media (max-width: 300px){
   .leadership-card{
-  max-height: 460% ;
+  max-height: 120% ;
 
   margin-bottom: 40px;
   }

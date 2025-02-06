@@ -79,7 +79,7 @@
             </div>
           </li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list" style="color: black;"></i>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" style="color: black; z-index: 99999;"></i>
       </nav>
 
       <a class="btn-getstarted" href="service-details.html">Buy Now</a>
@@ -739,7 +739,7 @@ takes our clients to the next level
             const isXsScreen = window.matchMedia('(max-width: 576px)').matches;
     
             // Adjust the horizontal scroll distance based on screen size
-            const maxTranslateX = isXsScreen ? 3000 : 450; // Smaller range for XS screens
+            const maxTranslateX = isXsScreen ? 1900 : 450; // Smaller range for XS screens
             const translateX = Math.min(Math.max(0, scrollPercentage * maxTranslateX), maxTranslateX);
             console.log(maxTranslateX)
     
@@ -1208,19 +1208,19 @@ takes our clients to the next level
           <h4>Useful Links</h4>
           <ul>
             <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">Portfolio</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">App Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Backend Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="graphic-service.html">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="mobile-service.html">App Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="backend-service.html">Backend Services</a></li>
           </ul>
         </div>
 
