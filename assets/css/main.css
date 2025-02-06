@@ -2234,6 +2234,13 @@ background: transparent;
   object-fit: cover;
   pointer-events: none;
   user-select: none;
+
+
+@media (max-width: 700px) {
+  opacity: 0%;
+  
+}
+
 }
 
 .content-testimonial {
@@ -2265,6 +2272,12 @@ background: transparent;
   font-weight: 600;
   margin-top: 35px;
   color: #4d4352;
+  
+
+
+  @media (max-width: 700px) {
+margin-top: -10px;    
+  }
 }
 
 .indicator-testimonial {
@@ -2354,7 +2367,7 @@ background: transparent;
 .sticky-section {
   position: sticky;
   top: 0;
-  height: 80vh;
+  height: 100vh;
   width: 300%;
   overflow: hidden;
   background: var(--background-color);
@@ -2423,7 +2436,7 @@ background: transparent;
 
 @media (max-width: 700px){
   .leadership-card{
-  max-height: 18% ;
+  max-height: 460% ;
 
   margin-bottom: 40px;
   }
@@ -2486,6 +2499,9 @@ background: transparent;
 .linkedin-icon {
   color: var(--default-color);
   transition: color 0.3s ease;
+  @media  (max-width: 700px){
+    opacity: 0%;
+  }
  
 }
 
