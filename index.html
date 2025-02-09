@@ -228,7 +228,7 @@ takes our clients to the next level
               </p>
             </div>
 
-            <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="300">
 
               <div class="faq-item faq-active">
 
@@ -1062,51 +1062,59 @@ takes our clients to the next level
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> 
         
         <script>
-           // Initialize EmailJS
-           (function () {
-               emailjs.init("kFnRkXK6Ly03i8T2O"); // Replace with your EmailJS Public Key
-           })();
-        
-           document.getElementById("contact-form").addEventListener("submit", function(event) {
-               event.preventDefault(); // Prevent default form submission
-        
-               // Show loading message
-               document.querySelector(".loading").style.display = "block";
-               document.querySelector(".sent-message").style.display = "none";
-               document.querySelector(".error-message").style.display = "none";
-        
-               // Collect form data
-               const params = {
-                   name: document.getElementById("name-field").value,
-                   email: document.getElementById("email-field").value,
-                   subject: document.getElementById("subject-field").value,
-                   message: document.getElementById("message-field").value
-               };
-        
-               // Send email using EmailJS
-               emailjs.send("service_wh9tksl", "template_1z3evrm", params)
-                   .then(function(response) {
-                       console.log("Email sent successfully!", response);
-        
-                       // Hide loading and show success message
-                       document.querySelector(".loading").style.display = "none";
-                       document.querySelector(".sent-message").style.display = "block";
-        
-                       // Reset the form
-                       document.getElementById("contact-form").reset();
-                   })
-                   .catch(function(error) {
-                       console.error("Error:", error);
-        
-                       // Hide loading and show error message
-                       document.querySelector(".loading").style.display = "none";
-                       document.querySelector(".error-message").style.display = "block";
-                       document.querySelector(".error-message").innerText = "Failed to send message. Please try again!";
-                   });
-           });
-        </script>
-        
-        
+          (function () {
+              emailjs.init("t0M7lQ9-RZJ7k8v8N"); // Replace with your EmailJS Public Key
+          })();
+      
+          document.getElementById("contact-form").addEventListener("submit", function(event) {
+              event.preventDefault(); // Prevent default form submission
+      
+              // Get DOM elements
+              const loadingMessage = document.querySelector(".loading");
+              const sentMessage = document.querySelector(".sent-message");
+              const errorMessage = document.querySelector(".error-message");
+      
+              // Show loading message
+              if (loadingMessage) loadingMessage.style.display = "block";
+              if (sentMessage) sentMessage.style.display = "none";
+              if (errorMessage) errorMessage.style.display = "none";
+      
+              // Collect form data
+              const params = {
+                  name: document.getElementById("name-field").value,
+                  email: document.getElementById("email-field").value,
+                  subject: document.getElementById("subject-field").value,
+                  message: document.getElementById("message-field").value
+              };
+      
+              // Send email using EmailJS
+              emailjs.send("service_5p2o6vc", "template_vybxqrf", params, "t0M7lQ9-RZJ7k8v8N")
+                  .then(function(response) {
+                      console.log("Email sent successfully!", response);
+      
+                      // Hide loading and show success message
+                      if (loadingMessage) loadingMessage.style.display = "none";
+                      if (sentMessage) {
+                          sentMessage.style.display = "block";
+                          sentMessage.innerText = "Your message has been sent successfully!";
+                      }
+      
+                      // Reset the form
+                      document.getElementById("contact-form").reset();
+                  })
+                  .catch(function(error) {
+                      console.error("Error:", error);
+      
+                      // Hide loading and show error message
+                      if (loadingMessage) loadingMessage.style.display = "none";
+                      if (errorMessage) {
+                          errorMessage.style.display = "block";
+                          errorMessage.innerText = "Failed to send message. Please try again!";
+                      }
+                  });
+          });
+      </script>
+      
       
 
         </div>
@@ -1120,75 +1128,90 @@ takes our clients to the next level
   <footer id="footer" class="footer">
 
     <div class="footer-newsletter">
-      <div class="container">
-          <div class="row justify-content-center text-center">
-              <div class="col-lg-6">
-                  <h4>Join Our Newsletter</h4>
-                  <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-  
-                  <form id="newsletter-form" class="php-email-form">
-                      <div class="newsletter-form">
-                          <input type="email" name="user_email" id="newsletter-email" placeholder="Enter your email" required>
-                          <input type="submit" value="Subscribe">
-                      </div>
-                      <div class="loading" style="display: none;">Loading...</div>
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-6">
+                <h4>Join Our Newsletter</h4>
+                <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
 
-                     <!-- <div class="error-message" style="display: none; color: red;"></div> -->
+                <form id="newsletter-form" class="php-email-form">
+                    <div class="newsletter-form">
+                        <input type="email" name="user_email" id="newsletter-email" placeholder="Enter your email" required>
+                        <input type="submit" value="Subscribe">
+                    </div>
+                    <div class="loading" style="display: none;">Loading...</div>
+                    <div class="error-message" style="visibility: hidden; opacity: 0; color: red;"></div>
+
+                    <div class="sent-message" style="display: none; color: green;">Your subscription request has been sent. Thank you!</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Include EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize EmailJS
+        emailjs.init("t0M7lQ9-RZJ7k8v8N"); // Replace with your EmailJS Public Key
+
+        // Get form element
+        const newsletterForm = document.getElementById("newsletter-form"); // ✅ FIXED: Correct ID
+
+        if (newsletterForm) {
+            newsletterForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Get form elements
+                const emailInput = document.getElementById("newsletter-email");
+                const loadingMessage = document.querySelector(".loading");
+                const sentMessage = document.querySelector(".sent-message");
+                const errorMessage = document.querySelector(".error-message");
+
+                if (!emailInput || !emailInput.value.trim()) {
+                    errorMessage.style.display = "block";
+                    errorMessage.textContent = "Please enter a valid email!";
+                    return;
+                }
+
+                // Show loading message
+                loadingMessage.style.display = "block";
+                sentMessage.style.display = "none";
+                errorMessage.style.display = "none";
+
+                // Collect form data
+                const params = { user_email: emailInput.value.trim() };
+
+                console.log("Sending email with params:", params); // Debugging log
+
+                // Send email using EmailJS
+                emailjs.send("service_5p2o6vc", "template_mes5j5q", params, "t0M7lQ9-RZJ7k8v8N")
+                    .then(function (response) {
+                        console.log("Newsletter subscription successful!", response);
+
+                        // Hide loading and show success message
+                        loadingMessage.style.display = "none";
+                        sentMessage.style.display = "block";
+
+                        // Reset the form
+                        newsletterForm.reset();
+                    })
+                    .catch(function (error) {
+                        console.error("Error:", error);
+
+                        // Hide loading and show error message
+                        loadingMessage.style.display = "none";
+                        errorMessage.style.display = "block";
+                        errorMessage.textContent = "Subscription failed. Please try again!";
+                    });
+            });
+        }
+    });
+</script>
 
 
-
-                      <div class="sent-message" style="display: none; color: green;">Your subscription request has been sent. Thank you!</div>
-
-                  </form>
-              </div>
-          </div>
-      </div>
-  </div>
-  
-  <!-- Include EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  
-  <script>
-      // Initialize EmailJS
-      (function () {
-          emailjs.init("kFnRkXK6Ly03i8T2O"); // Replace with your EmailJS Public Key
-      })();
-  
-      document.getElementById("newsletter-form").addEventListener("submit", function(event) {
-          event.preventDefault(); // Prevent default form submission
-  
-          // Show loading message
-          document.querySelector(".loading").style.display = "block";
-          document.querySelector(".sent-message").style.display = "none";
-      //    document.querySelector(".error-message").style.display = "none";
-  
-          // Collect form data
-          const params = {
-              user_email: document.getElementById("newsletter-email").value
-          };
-  
-          // Send email using EmailJS
-          emailjs.send("service_wh9tksl", "template_6l502a6", params)
-              .then(function(response) {
-                  console.log("Newsletter subscription successful!", response);
-  
-                  // Hide loading and show success message
-                  document.querySelector(".loading").style.display = "none";
-                  document.querySelector(".sent-message").style.display = "block";
-  
-                  // Reset the form
-                  document.getElementById("newsletter-form").reset();
-              })
-              .catch(function(error) {
-                  console.error("Error:", error);
-  
-                  // Hide loading and show error message
-                  document.querySelector(".loading").style.display = "none";
-                  document.querySelector(".error-message").style.display = "block";
-                 // document.querySelector(".error-message").innerText = "Failed to subscribe. Please try again!";
-              });
-      });
-  </script>
   
     <div class="container footer-top">
       <div class="row gy-4">
