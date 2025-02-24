@@ -205,11 +205,27 @@
                      
                         <!-- Buy Now Dropdown Button -->
 
-                        <a href="https://wa.me/923392003974" target="_blank">
-                          <button class="btn btn-buy " type="button" id="buyNowDropdown">
-                              Buy Now
-                          </button>
-                      </a>
+                        
+                            
+                                
+                        <h2 class="card-title text-center mb-4" >Pay Now</h2>
+                        <form id="payment-form">
+                            <div class="mb-3">
+                                <label class="form-label">Amount (USD)</label>
+                                <p class="form-control-plaintext fw-bold">$<span id="amount">29.99</span></p>
+                            </div>
+                            <div id="card-element" class="mb-3">
+                                <!-- Stripe Card Element will be inserted here -->
+                            </div>
+                            <div id="card-errors" role="alert" class="text-danger mb-3"></div>
+                            <button type="submit" class="btn btn-primary w-100" style="background-color: var(--accent-color); border: 1px var(--accent-color) solid;">Pay Now</button>
+                        </form>
+                        
+                        <script src="https://js.stripe.com/v3/"></script>
+                        
+                                
+                         
+                     
                       
                     </div>
                 </div>
@@ -430,6 +446,7 @@
     </div>
 
   </footer>
+  <script src="https://js.stripe.com/v3/"></script>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

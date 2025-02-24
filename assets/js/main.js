@@ -463,6 +463,65 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
+                            document.addEventListener("DOMContentLoaded", function () {
+                                // Initialize Stripe with your publishable key
+                                const stripe = Stripe('pk_test_51QvJ9rKbVOQMxK3GF3AN4nC5tYh0LNI6NIwxa6uzO08UOT5TzkAg2taW9vkRxUgCHhOJV1FPhOItLGA4MaK7qJ5U007q4hVcPc');
+                                const elements = stripe.elements();
+                        
+                                // Create a card element
+                                const cardElement = elements.create('card');
+                                cardElement.mount('#card-element');
+                        
+                                // Handle real-time validation errors
+                                cardElement.on('change', function (event) {
+                                    const displayError = document.getElementById('card-errors');
+                                    if (event.error) {
+                                        displayError.textContent = event.error.message;
+                                    } else {
+                                        displayError.textContent = '';
+                                    }
+                                });
+                        
+                                // Handle form submission
+                                const form = document.getElementById('payment-form');
+                                form.addEventListener('submit', async function (event) {
+                                    event.preventDefault();
+                        
+                                    // Create a payment token
+                                    const { token, error } = await stripe.createToken(cardElement);
+                        
+                                    if (error) {
+                                        // Display errors to the user
+                                        const errorElement = document.getElementById('card-errors');
+                                        errorElement.textContent = error.message;
+                                    } else {
+                                        // Send the token to your backend
+                                        fetch('https://zaincloudsbackend.up.railway.app/charge', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        stripeToken: 'tok_visa', // Use a test token
+        amount: 2999, // Amount in cents (e.g., $29.99)
+    }),
+})
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            console.log(data)
+                                            if (data.success) {
+                                                alert('Payment successful!');
+                                            } else {
+                                                alert('Payment failed: ' + data.message);
+                                            }
+                                        })
+                                        .catch(error => {
+                                            console.error('Error:', error);
+                                            alert('An error occurred. Please try again.');
+                                        });
+                                    }
+                                });
+                            });
+                        
 
 })();
