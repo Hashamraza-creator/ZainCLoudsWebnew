@@ -875,6 +875,42 @@ z-index: 1000001;
   bottom: 15px;
 }
 
+.whatsapp-icon{
+  position: fixed;
+  bottom: 15px;
+  right: 66px; /* Adjust position */
+  width: 44px;
+  height: 44px;
+  background: #25D366; /* WhatsApp Green */
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+.hire-me-icon{
+  position: fixed;
+  bottom: 15px;
+  right: 117px; /* Adjust position */
+  width: 44px;
+  height: 44px;
+  background: #007bff; /* Blue color for hire me */
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+
+
+.whatsapp-icon:hover {
+  background: #1ebe57;
+}
+.hire-me-icon:hover{
+
+  background: #007bff ;
+}
+
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
