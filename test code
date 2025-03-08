@@ -1,0 +1,118 @@
+// <div id="payment-form-container" class="card p-4 shadow">
+//             <h2 class="mb-4 text-center">Payment Form</h2>
+//             <form id="payment-form" class="needs-validation" novalidate>
+//                 <!-- Transaction Reference Input -->
+//                 <div class="mb-3">
+//                     <label for="transactionRef" class="form-label">Transaction Reference</label>
+//                     <input type="text" class="form-control" id="transactionRef" required readonly>
+//                     <div class="invalid-feedback">Please enter a transaction reference</div>
+//                 </div>
+                
+//                 <div class="mb-3">
+//                     <label for="amount" class="form-label">Amount (PKR)</label>
+//                     <input type="number" class="form-control" id="amount" required>
+//                     <div class="invalid-feedback">Please enter a valid amount</div>
+//                 </div>
+    
+//                 <div class="mb-3">
+//                     <label for="customerName" class="form-label">Customer Name</label>
+//                     <input type="text" class="form-control" id="customerName" required>
+//                     <div class="invalid-feedback">Please enter your name</div>
+//                 </div>
+    
+//                 <div class="mb-3">
+//                     <label for="customerEmail" class="form-label">Email</label>
+//                     <input type="email" class="form-control" id="customerEmail" required>
+//                     <div class="invalid-feedback">Please enter a valid email</div>
+//                 </div>
+    
+//                 <div class="mb-3">
+//                     <label for="customerPhone" class="form-label">Phone Number</label>
+//                     <input type="tel" class="form-control" id="customerPhone" required>
+//                     <div class="invalid-feedback">Please enter your phone number</div>
+//                 </div>
+    
+//                 <button type="submit" class="btn btn-primary w-100" id="submit-button">
+//                     <span id="button-text">Proceed to Payment</span>
+//                     <span id="spinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+//                 </button>
+    
+//                 <div id="payment-message" class="alert alert-danger mt-3 d-none"></div>
+//             </form>
+//         </div>
+//     </div>
+// </div>
+
+// <script>
+//     // Function to generate a unique transaction reference
+//     function generateTransactionRef() {
+//         const timestamp = Date.now(); // Current timestamp (milliseconds since Unix epoch)
+//         const randomStr = Math.random().toString(36).substring(2, 10); // Random alphanumeric string
+//         return `TXN-${timestamp}-${randomStr}`; // Unique reference in the format TXN-{timestamp}-{randomStr}
+//     }
+
+//     // Set the generated transaction reference when the page loads
+//     document.addEventListener('DOMContentLoaded', function() {
+//         const transactionRefInput = document.getElementById('transactionRef');
+//         const uniqueTransactionRef = generateTransactionRef();
+//         transactionRefInput.value = uniqueTransactionRef; // Set the value of the input field
+//     });
+
+//     // Form submission logic
+//     document.getElementById('payment-form').addEventListener('submit', async function (event) {
+//         event.preventDefault();
+    
+//         const submitButton = document.getElementById('submit-button');
+//         const spinner = document.getElementById('spinner');
+//         const paymentMessage = document.getElementById('payment-message');
+    
+//         // Disable button and show spinner
+//         submitButton.disabled = true;
+//         spinner.classList.remove('d-none');
+//         paymentMessage.classList.add('d-none'); // Hide previous messages
+    
+//         // Collect form data
+//         const transactionRef = document.getElementById('transactionRef').value.trim();
+//         const amount = document.getElementById('amount').value.trim();
+//         const customerName = document.getElementById('customerName').value.trim();
+//         const customerEmail = document.getElementById('customerEmail').value.trim();
+//         const customerPhone = document.getElementById('customerPhone').value.trim();
+    
+//         // Validate required fields
+//         if (!transactionRef || !amount || !customerName || !customerEmail || !customerPhone) {
+//             paymentMessage.textContent = "❌ All fields are required!";
+//             paymentMessage.classList.remove('d-none');
+//             submitButton.disabled = false;
+//             spinner.classList.add('d-none');
+//             return;
+//         }
+    
+//         const payload = { transactionRef, amount, customerName, customerEmail, customerPhone };
+    
+//         try {
+//             console.log("🔄 Sending payment request...", payload);
+    
+//             const response = await fetch('http://localhost:5005/api/payment', {
+//                 method: 'POST',
+//                 headers: { 'Content-Type': 'application/json' },
+//                 body: JSON.stringify(payload),
+//             });
+    
+//             const result = await response.json();
+//             console.log("✅ API Response:", result);
+    
+//             if (response.ok && result.redirectURL) {
+//                 window.location.href = result.redirectURL;
+//             } else {
+//                 throw new Error(result.message || "Failed to process payment");
+//             }
+//         } catch (error) {
+//             console.error("❌ Payment Error:", error);
+//             paymentMessage.textContent = "❌ Payment failed: " + error.message;
+//             paymentMessage.classList.remove('d-none');
+//         } finally {
+//             submitButton.disabled = false;
+//             spinner.classList.add('d-none');
+//         }
+//     });
+// </script>

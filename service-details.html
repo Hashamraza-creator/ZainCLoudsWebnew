@@ -82,12 +82,12 @@
     }
     .price-section {
         background: var(--service-color);
+        box-shadow: 0px 5px 9px 0px var(--accent-color);
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+       
         margin-top: 30px;
         position: sticky;
-        box-shadow: 0px 5px 9px 0px var(--accent-color);
         top: 400px;
     }
     .price {
@@ -126,7 +126,7 @@
 
       <nav id="navmenu" class="navmenu" >
         <ul>
-          <li><a href="index.html" >Home</a></li>
+          <li><a href="index.html"  >Home</a></li>
           <li><a href="index.html" >About</a></li>
           <li><a href="index.html" >Services</a></li>
           <li><a href="index.html" >Portfolio</a></li>
@@ -153,12 +153,16 @@
           <li><a href="index.html" >FAQ</a></li>
           <li><a href="index.html" >Contact</a></li>
           <li class="switch-item">
-      
+            <!-- <div class="switch-container">
+              <input type="checkbox" id="theme-toggle" class="theme-switch">
+              <label for="theme-toggle" class="switch-label">
+                <span class="switch-circle"></span>
+              </label>
             </div>
           </li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list" style="color: black; z-index: 1;"></i>
-      </nav>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" style="color: black;"></i>
+      </nav> -->
 
       <!-- <a class="btn-getstarted" href="#about">Get Started</a> -->
      
@@ -175,10 +179,10 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
-                    <li class="breadcrumb-item active">Web Services</li>
+                    <li class="breadcrumb-item active">Web Development Services</li>
                 </ol>
             </nav>
-            <h1 class="mt-2">Web Services</h1>
+            <h1 class="mt-2">Web Development Services</h1>
         </div>
     </div>
 
@@ -205,9 +209,6 @@
                      
                         <!-- Buy Now Dropdown Button -->
 
-                        
-                            
-                                
                         <h2 class="card-title text-center mb-4" >Pay Now</h2>
                         <form id="payment-form">
                             <div class="mb-3">
@@ -222,11 +223,6 @@
                         </form>
                         
                         <script src="https://js.stripe.com/v3/"></script>
-                        
-                                
-                         
-                     
-                      
                     </div>
                 </div>
 
@@ -253,10 +249,10 @@
                                 <span class="carousel-control-next-icon"></span>
                             </button>
                         </div>
-                        <h2 class="mb-4">Web Design Services</h2>
-                        <p class="lead mb-4">Create stunning, responsive websites that engage your audience and drive results.</p>
+                        <h2 class="mb-4">Web Development Services</h2>
+                        <p class="lead mb-4">Create stunning, responsive Mobile Apllications that engage your audience and drive results.</p>
                         <ul class="feature-list list-unstyled">
-                            <li><i class="bi bi-check-circle"></i><span>Custom website design and development</span></li>
+                            <li><i class="bi bi-check-circle"></i><span>Custom App design and development</span></li>
                             <li><i class="bi bi-check-circle"></i><span>Responsive and mobile-first approach</span></li>
                             <li><i class="bi bi-check-circle"></i><span>User experience optimization</span></li>
                         </ul>
@@ -265,7 +261,7 @@
                     <!-- Software Development Section -->
                     <div id="software-development" class="service-content">
                         <h2 class="mb-4">Software Development</h2>
-                        <p class="lead mb-4">Build robust and scalable software solutions for your business needs.</p>
+                        <p class="lead mb-4">Build robust and scalable Application solutions for your business needs.</p>
                         <ul class="feature-list list-unstyled">
                             <li><i class="bi bi-check-circle"></i><span>Custom software development</span></li>
                             <li><i class="bi bi-check-circle"></i><span>Mobile app development</span></li>
@@ -414,10 +410,10 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">App Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Backend Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="graphic-service.html">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="mobile-service.html">App Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="backend-service.html">Backend Services</a></li>
           </ul>
         </div>
 
@@ -446,7 +442,6 @@
     </div>
 
   </footer>
-  <script src="https://js.stripe.com/v3/"></script>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
